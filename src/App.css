@@ -1,0 +1,40 @@
+.app {
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 4세용 공통 버튼 (성인 기준 1.5~2배 크게) */
+.big-btn {
+  min-width: 88px;
+  min-height: 88px;
+  border-radius: 28px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #fff;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.12);
+  transition: transform 0.08s ease;
+}
+.big-btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* 뒤로 가기(홈) 버튼 - 화면 구석, 아이 손이 잘 닿는 크기 */
+.home-btn {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #ffffffcc;
+  font-size: 2rem;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

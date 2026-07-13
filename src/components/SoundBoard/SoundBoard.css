@@ -1,0 +1,121 @@
+.sound-board {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: radial-gradient(circle at 50% 0%, #fffdf5 0%, #ffe9b8 100%);
+  padding: 14px 2vw 2vw;
+  overflow: hidden;
+}
+
+/* 언어 전환 (ABC / 가나다) */
+.mode-switch {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.mode-pill {
+  min-width: 120px;
+  min-height: 60px;
+  border-radius: 999px;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #b89a6a;
+  background: #fff;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.08);
+}
+.mode-pill.active {
+  color: #fff;
+  background: #ff9838;
+  box-shadow: 0 4px 0 #d1691a;
+}
+
+/* 카드 그리드 */
+.board-grid {
+  flex: 1;
+  width: 100%;
+  max-width: 1100px;
+  display: grid;
+  gap: clamp(8px, 1.4vw, 18px);
+  align-content: center;
+  overflow-y: auto;
+}
+.board-grid.en {
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+}
+.board-grid.ko {
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+.letter-card {
+  aspect-ratio: 1 / 1;
+  border-radius: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.14);
+  min-height: 96px; /* 4세용 큰 터치 영역 */
+}
+.letter-card:active {
+  filter: brightness(1.05);
+}
+.letter-char {
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 900;
+  text-shadow: 0 3px 2px rgba(0, 0, 0, 0.18);
+}
+
+/* 톡 튀는 애니메이션 */
+.letter-card.bounce {
+  animation: pop-bounce 0.5s ease;
+}
+@keyframes pop-bounce {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.22) rotate(-4deg); }
+  55% { transform: scale(0.94) rotate(3deg); }
+  75% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* 이미지 팝업 */
+.popup-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 40;
+  animation: fade-in 0.15s ease;
+}
+.popup-card {
+  background: #fff;
+  border-radius: 40px;
+  padding: 5vh 7vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  animation: pop-in 0.35s cubic-bezier(0.18, 1.5, 0.5, 1);
+}
+.popup-emoji {
+  font-size: clamp(6rem, 22vw, 14rem);
+  line-height: 1;
+}
+.popup-word {
+  font-size: clamp(2rem, 7vw, 4rem);
+  font-weight: 900;
+  color: #ff7b3d;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes pop-in {
+  0% { transform: scale(0.3); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}

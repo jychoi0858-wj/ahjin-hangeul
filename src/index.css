@@ -1,0 +1,38 @@
+/* ===== 전역 리셋 & 4세용 기본 규칙 ===== */
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Baloo 2", "Jua", "Comic Sans MS", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #fff8e7;
+  color: #4a3f35;
+  /* 아이가 실수로 텍스트를 선택/확대하지 못하게 */
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  overflow: hidden;
+  touch-action: manipulation;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* 아이가 더블탭 확대하는 것 방지 */
+img {
+  pointer-events: none;
+}

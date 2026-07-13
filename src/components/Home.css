@@ -1,0 +1,68 @@
+.home {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4vh;
+  background: radial-gradient(circle at 50% 0%, #fff8e7 0%, #ffe9b8 100%);
+  padding: 3vh 4vw;
+}
+
+.home-title {
+  font-size: clamp(1.6rem, 4.5vw, 3rem);
+  color: #ff7b3d;
+  text-shadow: 0 3px 0 #fff, 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 0;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(16px, 3vw, 36px);
+  width: min(90vw, 820px);
+}
+
+.game-card {
+  aspect-ratio: 16 / 9;
+  border-radius: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #fff;
+  box-shadow: 0 10px 0 rgba(0, 0, 0, 0.12), 0 14px 24px rgba(0, 0, 0, 0.12);
+  position: relative;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+.game-card:active {
+  transform: translateY(6px);
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.12), 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+.game-emoji {
+  font-size: clamp(3rem, 9vw, 6rem);
+  line-height: 1;
+  filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.15));
+}
+
+.game-name {
+  font-size: clamp(1.1rem, 3vw, 2rem);
+  font-weight: 800;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.game-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #d1691a;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
